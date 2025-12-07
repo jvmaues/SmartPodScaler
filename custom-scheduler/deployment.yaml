@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: scheduler-sa
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: scheduler-rb
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:basic-user
+subjects:
+- kind: ServiceAccount
+  name: scheduler-sa
+  namespace: default
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: heuristic-scheduler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: heuristic-scheduler
+  template:
+    metadata:
+      labels:
+        app: heuristic-scheduler
+    spec:
+      serviceAccountName: scheduler-sa
+      containers:
+      - name: scheduler
+        image: seu-registro/heuristic-scheduler:latest

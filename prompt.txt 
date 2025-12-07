@@ -1,0 +1,18 @@
+Seção{introdução}:
+    Motivação: Escalonamento de containers
+    Motivação Segundaria: O paper em anexo com nome de "galoa-sbpo-2023-container.pdf" que coloca uma solução de programação inteira mista mas não releva as penalizações de mudança de nós, explicite isso na seção de introdução.
+    Limitações das soluções existentes para o Escalonamento de containers: O algoritmo padrão do Kubernetes; Quais estratégias lidam com esse problema?(Desenvolva isso); Motivo pelo qual não é eficiente?(Desenvolva isso); Como poderia ser resolvido com teoria de otimização.
+
+Seção{Descrição do Problema e formulação Matemática}:
+
+Seção{Trabalhos Relacionados}:
+
+Seção{Metodologia}:
+
+Ideia Geral: Propor uma formulação de programação linear inteira mista
+Detalhamento: referenciar pseudocodigo do Kubernetes e o modelo que propormos
+Explicar o passo a passo do que foi realizado.
+
+Seção{Experimentos Computacionais}:
+
+Seção{Conclusão}:
